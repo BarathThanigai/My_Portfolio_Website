@@ -11,10 +11,9 @@ const fadeUp = {
 };
 
 const socials = [
-  { icon: HiMail, label: 'Email', value: 'alex@example.dev', href: 'mailto:alex@example.dev' },
-  { icon: SiGithub, label: 'GitHub', value: 'github.com/alexkim', href: 'https://github.com' },
-  { icon: FaLinkedinIn, label: 'LinkedIn', value: 'linkedin.com/in/alexkim', href: 'https://linkedin.com' },
-  { icon: SiX, label: 'X / Twitter', value: '@alexkim_dev', href: 'https://x.com' },
+  { icon: HiMail, label: 'Email', value: 'contactmebarath@gmail.com', href: 'mailto:contactmebarath@gmail.com' },
+  { icon: SiGithub, label: 'GitHub', value: 'github.com/BarathThanigai', href: 'https://github.com/BarathThanigai' },
+  { icon: FaLinkedinIn, label: 'LinkedIn', value: 'linkedin.com/in/barath-t-4361b8318/', href: 'https://www.linkedin.com/in/barath-t-4361b8318/' },
 ];
 
 export default function Contact() {

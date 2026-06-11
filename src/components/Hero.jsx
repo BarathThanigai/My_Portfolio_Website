@@ -108,7 +108,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4">
-            Alex Kim
+            Barath T
           </motion.h1>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className={`text-2xl sm:text-3xl font-semibold mb-6 ${dark ? 'text-indigo-400' : 'text-indigo-600'}`}>
@@ -116,7 +116,10 @@ export default function Hero() {
           </motion.div>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} className={`text-lg leading-relaxed max-w-xl mb-10 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-            I build scalable backend systems and polished frontend experiences. Focused on distributed systems, developer tooling, and open-source infrastructure.
+            I'm a Computer Science student passionate about technology, problem-solving, and continuous learning.
+
+            I enjoy building practical and impactful projects while exploring new tools and technologies across full-stack development, data science, artificial intelligence, machine learning and software engineering.
+
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} className="flex flex-wrap items-center gap-3">

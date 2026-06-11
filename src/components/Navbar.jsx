@@ -47,7 +47,7 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className={`mono font-semibold text-sm tracking-wider ${dark ? 'text-indigo-400' : 'text-indigo-600'}`}
         >
-          {'<AK />'}
+          <span className="font-bold">Barath T</span>
         </button>
 
         <div className="hidden md:flex items-center gap-1">
