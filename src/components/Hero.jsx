@@ -127,8 +127,8 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-indigo-900/25 hover:shadow-indigo-900/40 hover:-translate-y-0.5">
               Get in touch <HiArrowRight size={15} />
             </button>
-            <a href="#" className={`inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all duration-200 hover:-translate-y-0.5 ${dark ? 'border-[#1E1E2A] text-gray-300 hover:text-white hover:bg-white/5 hover:border-white/10' : 'border-[#E2E4EB] text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>
-              <HiDownload size={15} /> Download CV
+            <a href="Resume - T Barath.pdf" download="Resume - T Barath.pdf" className={`inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all duration-200 hover:-translate-y-0.5 ${dark ? 'border-[#1E1E2A] text-gray-300 hover:text-white hover:bg-white/5 hover:border-white/10' : 'border-[#E2E4EB] text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>
+              <HiDownload size={15} /> Download Resume
             </a>
           </motion.div>
 

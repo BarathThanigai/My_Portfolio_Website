@@ -96,7 +96,7 @@ export default function Projects() {
         </div>
 
         <motion.div variants={fadeUp} custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-10 text-center">
-          <a href="https://github.com" target="_blank" rel="noreferrer"
+          <a href="https://github.com/BarathThanigai?tab=repositories" target="_blank" rel="noreferrer"
             className={`inline-flex items-center gap-2 text-sm font-medium transition-colors ${dark ? 'text-gray-500 hover:text-white' : 'text-gray-400 hover:text-gray-800'}`}>
             <SiGithub size={15} /> View all projects on GitHub
           </a>
