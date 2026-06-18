@@ -57,6 +57,16 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Docker-Container-Security-Scanner',
     live: null,
     featured: true,
-    category: ['Cybersecurity', 'DevOps'],
+    category: 'Cybersecurity'
+  },
+  {
+    id: 7,
+    title: 'Online Retail Sales Analysis and Forecasting',
+    description: 'This project performs comprehensive data analysis on the online retail sales dataset. It includes data cleaning, exploratory data analysis (EDA), revenue analytics, and time-series forecasting to identify trends, top-performing products, and geographical revenue patterns.',
+    tech: ['Python', 'Power BI', 'Pandas', 'Numpy', 'Matplotlib', 'Seaborn', 'Prophet'],
+    github: 'https://github.com/BarathThanigai/FUTURE_DS_01_OnlineRetail_Sales_Analysis',
+    live: null,
+    featured: true,
+    category: ['Data Science', 'AI/ML'],
   },
 ];
