@@ -10,7 +10,7 @@ const fadeUp = {
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08, ease: 'easeOut' } }),
 };
 
-const FILTERS = ['All', 'Featured', 'Data Science','AI/ML','Cybersecurity', 'Frontend', 'Full Stack', 'DevOps','Computer Vision'];
+const FILTERS = ['All', 'Data Science','AI/ML','Cybersecurity', 'Full Stack', 'DevOps','Computer Vision'];
 
 function ProjectCard({ project, dark, index }) {
   return (
@@ -63,9 +63,12 @@ export default function Projects() {
   const dark = theme === 'dark';
   const [filter, setFilter] = useState('All');
 
-  const filtered = projects.filter(p =>
-    filter === 'All' ? true : filter === 'Featured' ? p.featured : p.category === filter
-  );
+  const filtered = projects.filter((p) => {
+  if (filter === 'All') return true;
+  if (filter === 'Featured') return p.featured;
+
+  return p.categories?.includes(filter);
+});
 
   return (
     <section id="projects" className={`py-24 ${dark ? 'bg-[#0D0D16]' : 'bg-white'}`}>

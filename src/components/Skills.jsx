@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import {
-  SiReact, SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiVite,
-  SiGo, SiNodedotjs, SiPython, SiRust,
-  SiPostgresql, SiRedis, SiMongodb, SiClickhouse,
-  SiDocker, SiKubernetes, SiGooglecloud, SiGithubactions, SiTerraform,
-  SiApachekafka, SiGit, SiLinux, SiGrafana,
+  SiHtml5, SiReact, SiJavascript, SiTailwindcss, SiFramer, SiVite,
+  SiPython, SiOpenjdk, SiC, SiCplusplus,
+  SiNodedotjs,SiExpress, SiFastapi, SiDjango, SiJsonwebtokens,
+  SiPostgresql, SiMongodb, SiMysql,
+  SiHuggingface, SiPandas, SiNumpy, SiScikitlearn, SiPytorch,
+  SiDocker, SiGit, SiGithub, SiPostman,
 } from 'react-icons/si';
-import { FaAmazon } from 'react-icons/fa';
+import { FaCss3Alt, FaDatabase, FaCode, FaChartBar, FaRobot, FaEye } from 'react-icons/fa';
+import { TbApi } from 'react-icons/tb';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,52 +18,67 @@ const fadeUp = {
 
 const categories = [
   {
+    name: 'Programming Languages',
+    skills: [
+      { name: 'Python', Icon: SiPython, color: '#3776AB' },
+      { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
+      { name: 'Java', Icon: SiOpenjdk, color: '#ED8B00' },
+      { name: 'C', Icon: SiC, color: '#A8B9CC' },
+      { name: 'C++', Icon: SiCplusplus, color: '#00599C' },
+      { name: 'MATLAB', Icon: FaCode, color: '#0076A8' },
+    ],
+  },
+  {
     name: 'Frontend',
     skills: [
       { name: 'React', Icon: SiReact, color: '#61DAFB' },
-      { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
-      { name: 'Next.js', Icon: SiNextdotjs, color: '#000000' },
+      { name: 'HTML5', Icon: SiHtml5, color: '#E34F26' },
+      { name: 'CSS3', Icon: FaCss3Alt, color: '#1572B6' },
       { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06B6D4' },
       { name: 'Framer Motion', Icon: SiFramer, color: '#0055FF' },
       { name: 'Vite', Icon: SiVite, color: '#646CFF' },
     ],
   },
   {
-    name: 'Backend & Languages',
+    name: 'Backend',
     skills: [
-      { name: 'Go', Icon: SiGo, color: '#00ACD7' },
       { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
-      { name: 'Python', Icon: SiPython, color: '#3776AB' },
-      { name: 'Rust', Icon: SiRust, color: '#CE422B' },
+      { name: 'Express.js', Icon: SiExpress, color: '#8b8b8b' },
+      { name: 'FastAPI', Icon: SiFastapi, color: '#009688' },
+      { name: 'Django', Icon: SiDjango, color: '#092E20' },
+      { name: 'REST API', Icon: TbApi, color: '#3B82F6' },
+      { name: 'JWT Authentication', Icon: SiJsonwebtokens, color: '#D63AFF' },
     ],
   },
   {
     name: 'Databases',
     skills: [
       { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169E1' },
-      { name: 'Redis', Icon: SiRedis, color: '#DC382D' },
+      { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
+      { name: 'Oracle SQL', Icon: FaDatabase, color: '#f21111' },
       { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
-      { name: 'ClickHouse', Icon: SiClickhouse, color: '#FFCC01' },
     ],
   },
   {
-    name: 'Cloud & DevOps',
+    name: 'Artificial Intelligence & Machine Learning',
     skills: [
-      { name: 'AWS', Icon: FaAmazon, color: '#FF9900' },
-      { name: 'GCP', Icon: SiGooglecloud, color: '#4285F4' },
+      { name: 'Hugging Face', Icon: SiHuggingface, color: '#FFD21E' },
+      { name: 'Ollama', Icon: FaRobot, color: '#898989' },
+      { name: 'Pandas', Icon: SiPandas, color: '#3d14e1' },
+      { name: 'NumPy', Icon: SiNumpy, color: '#045570' },
+      { name: 'Scikit-learn', Icon: SiScikitlearn, color: '#F7931E' },
+      { name: 'PyTorch', Icon: SiPytorch, color: '#EE4C2C' },
+      { name: 'MediaPipe', Icon: FaEye, color: '#4285F4' },
+    ],
+  },
+  {
+    name: 'DevOps & Tools',
+    skills: [
       { name: 'Docker', Icon: SiDocker, color: '#2496ED' },
-      { name: 'Kubernetes', Icon: SiKubernetes, color: '#326CE5' },
-      { name: 'GitHub Actions', Icon: SiGithubactions, color: '#2088FF' },
-      { name: 'Terraform', Icon: SiTerraform, color: '#7B42BC' },
-    ],
-  },
-  {
-    name: 'Tools',
-    skills: [
-      { name: 'Kafka', Icon: SiApachekafka, color: '#231F20' },
       { name: 'Git', Icon: SiGit, color: '#F05032' },
-      { name: 'Linux', Icon: SiLinux, color: '#FCC624' },
-      { name: 'Grafana', Icon: SiGrafana, color: '#F46800' },
+      { name: 'GitHub', Icon: SiGithub, color: '#848484' },
+      { name: 'Postman', Icon: SiPostman, color: '#FF6C37' },
+      { name: 'Power BI', Icon: FaChartBar, color: '#F2C811' },
     ],
   },
 ];

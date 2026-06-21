@@ -7,7 +7,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Hybrid_Multimodal_Insurance_Claim_Verification_System',
     live: null,
     featured: true,
-    categories: ['AI/ML', 'Computer Vision', 'NLP'],
+    categories: 'AI/ML',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/GitHub-Developer-Portfolio-Analytics-System',
     live: null,
     featured: true,
-    categories: 'Full Stack',
+    categories: ['Full Stack','AI/ML'],
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Business-Intelligence-Power-BI-Analytics-Dashboard-Suite',
     live: null,
     featured: true,
-    categories: 'Data Science'
+    categories: ['Data Science','AI/ML'],
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Docker-Container-Security-Scanner',
     live: null,
     featured: true,
-    category: 'Cybersecurity'
+    categories: ['DevOps','Cybersecurity'],
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Transport-Demand-Prediction',
     live: null,
     featured: true,
-    category: ['Data Science', 'AI/ML'],
+    categories: ['Data Science','AI/ML'],
   },
     {
     id: 6,
@@ -57,7 +57,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Inside-Threat-Alert-System',
     live: null,
     featured: true,
-    category: ['AI/ML', 'Cybersecurity']
+    categories: ['Cybersecurity','AI/ML'],
   },
     {
     id: 7,
@@ -67,7 +67,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Hand-Raise-Detector',
     live: 'https://hand-raise-detector.onrender.com/',
     featured: true,
-    category: 'Computer Vision',
+    categories: ['Computer Vision','AI/ML'],
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Foodprep-Frontend',
     live: 'https://vite-foodprep-user.onrender.com/',
     featured: true,
-    category: 'Full Stack',
+    categories: 'Full Stack',
   },
   {
     id: 9,
@@ -87,6 +87,6 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Task-manager',
     live: 'https://task-manager-mcgk.onrender.com/',
     featured: true,
-    category: 'Full Stack',
+    categories: ['Full Stack','DevOps'],
   },
 ];
