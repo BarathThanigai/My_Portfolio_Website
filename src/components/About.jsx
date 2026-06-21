@@ -27,15 +27,15 @@ export default function About() {
         </motion.div>
         <motion.h2 variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }}
           className={`text-3xl md:text-4xl font-bold tracking-tight mb-14 ${dark ? 'text-white' : 'text-gray-900'}`}>
-          Engineered for scale,<br />designed for clarity.
+          Built with purpose,<br />driven by curiosity.
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-5">
             {[
-              "I'm a software engineer with 4+ years of experience building high-throughput distributed systems and developer-facing products. Currently a Senior Engineer at Meridian Systems, where I work on data infrastructure that processes hundreds of millions of events daily.",
-              "My background spans the full stack — from designing PostgreSQL schemas and Kafka pipelines to shipping polished React interfaces. I care deeply about system correctness, API ergonomics, and making complex things feel simple.",
-              "Outside of work, I maintain several open-source projects and write about engineering practices. I'm interested in compiler design, observability tools, and making software infrastructure more accessible to small teams.",
+              "I'm a Computer Science student at VIT Chennai with a strong interest in software development, artificial intelligence, and data science. I enjoy building end-to-end applications that combine intuitive user interfaces with scalable backend systems and intelligent, data-driven solutions.",
+              "My experience spans full-stack development, machine learning, and data analytics, with projects involving React, FastAPI, Node.js, Express.js, PostgreSQL, MongoDB, and modern AI frameworks. I've developed applications ranging from AI-powered claim verification systems and anomaly detection dashboards to predictive analytics models and business intelligence solutions.",
+              "I'm passionate about solving real-world problems through technology and continuously expanding my knowledge by exploring emerging tools, frameworks, and software engineering practices. I enjoy turning ideas into practical, impactful applications while focusing on clean design, maintainable code, and user-centric experiences.",
             ].map((para, i) => (
               <motion.p key={i} variants={fadeUp} custom={i + 2} initial="hidden" whileInView="visible" viewport={{ once: true }}
                 className={`text-[15px] leading-relaxed ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
@@ -43,8 +43,9 @@ export default function About() {
               </motion.p>
             ))}
             <motion.div variants={fadeUp} custom={5} initial="hidden" whileInView="visible" viewport={{ once: true }} className="pt-2">
-              <a href="#" className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-500 hover:text-indigo-400 transition-colors">
-                Read my blog →
+              <a href="https://www.linkedin.com/in/barath-t-4361b8318/" target="_blank"
+  rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-500 hover:text-indigo-400 transition-colors">
+                Visit my LinkedIn Profile →
               </a>
             </motion.div>
           </div>
@@ -65,7 +66,7 @@ export default function About() {
               className={`col-span-2 p-4 rounded-xl border ${dark ? 'bg-indigo-900/15 border-indigo-900/30' : 'bg-indigo-50 border-indigo-100'}`}>
               <div className={`text-xs font-semibold mono uppercase tracking-wide mb-1.5 ${dark ? 'text-indigo-400' : 'text-indigo-600'}`}>Current focus</div>
               <div className={`text-sm leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
-                Building developer tooling and exploring WebAssembly runtimes for edge computing.
+                Building software that solves real-world problems through innovation, collaboration, and continuous learning.
               </div>
             </motion.div>
           </div>

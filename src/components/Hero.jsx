@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { HiDownload, HiArrowRight } from 'react-icons/hi';
 
-const TITLES = ['CSE student at VIT - Chennai', 'Full Stack Developer', 'Systems Designer', 'Open Source Builder'];
+const TITLES = ['CSE student at VIT - Chennai', 'Exploring AI & Machine Learning', 'Creating Data-Driven Solutions', 'Building Scalable Software'];
 
 function DotGrid({ dark }) {
   const canvasRef = useRef(null);
