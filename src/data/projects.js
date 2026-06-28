@@ -1,6 +1,16 @@
 export const projects = [
   {
     id: 1,
+    title: 'Concurrent Web Crawler',
+    description: 'WebScope is a full-stack website intelligence platform that concurrently crawls websites, analyzes SEO and performance metrics, detects broken links, and generates actionable website audit reports through an interactive dashboard.',
+    tech: ['Python', 'Pydantic', 'Pillow', 'OpenAI API', 'Ollama', 'Qwen2.5VL', 'Hugging Face', 'SmolVLM', 'PyTorch', 'Pandas', 'NumPy'],
+    github: 'https://github.com/BarathThanigai/Concurrent_Web_Crawler',
+    live: null,
+    featured: true,
+    categories: 'AI/ML',
+  },
+  {
+    id: 2,
     title: 'Hybrid Multimodal Insurance Claim Verification System',
     description: 'A modular Python pipeline for reviewing structured damage claims involving cars, laptops, and packages. It combines multilingual claim extraction, local image validation, evidence requirements, user-history risk context, optional vision-language model backends (OpenAI, Ollama, and Hugging Face), and deterministic decisions.',
     tech: ['Python', 'Pydantic', 'Pillow', 'OpenAI API', 'Ollama', 'Qwen2.5VL', 'Hugging Face', 'SmolVLM', 'PyTorch', 'Pandas', 'NumPy'],
@@ -20,7 +30,7 @@ export const projects = [
     categories: ['Full Stack','AI/ML'],
   },
   {
-    id: 3,
+    id: 4,
     title: 'Business Intelligence & Power BI Analytics Dashboard Suite',
     description: 'A collection of business intelligence dashboards and analytics projects developed using Power BI and Python. The suite includes online retail sales analysis & forecasting, customer retention and churn analysis, and marketing funnel conversion & performance analysis. These projects demonstrate expertise in data cleaning, exploratory data analysis, KPI design, interactive dashboard development, forecasting, and business insight generation across multiple domains.',
     tech: ['Power BI','Python','Pandas','NumPy','Matplotlib','Seaborn','Prophet'],
@@ -30,7 +40,7 @@ export const projects = [
     categories: ['Data Science','AI/ML'],
   },
   {
-    id: 4,
+    id: 5,
     title: 'Docker Container and Security Vulnerability Scanner',
     description: 'This project is an automated security scanner designed to continuously monitor Python projects for vulnerabilities, weak file permissions, and potential security risks. It integrates multiple security tools, including Bandit and Semgrep, to detect command injection, hardcoded secrets (API keys, passwords), and misconfigurations.',
     tech: ['Python', 'Docker', 'Bandit', 'Semgrep'],
@@ -40,7 +50,7 @@ export const projects = [
     categories: ['DevOps','Cybersecurity'],
   },
   {
-    id: 5,
+    id: 6,
     title: 'Transport Ticket Demand Prediction',
     description: 'A data science regression project to forecast Mobiticket seat demand per ride using route, date, and time. Includes data cleaning, EDA, feature engineering, and modeling (Linear, RF, XGBoost and many more) to predict ticket sales.',
     tech: ['Python', 'Pandas', 'Scikit-learn', 'XGBoost', 'LightGBM', 'CatBoost','Matplotlib', 'Seaborn'],
@@ -50,7 +60,7 @@ export const projects = [
     categories: ['Data Science','AI/ML'],
   },
     {
-    id: 6,
+    id: 7,
     title: 'Insider Threat Detection and Alert System',
     description: 'An Insider Threat Detection Dashboard that applies Isolation Forest to detect anomalies in user activity logs. Data from Excel is stored in MongoDB, served through a Node.js + Express backend, and visualized on a React dashboard with auto-refresh and anomaly highlighting.',
     tech: ['React', 'CSS', 'Node.js', 'Express.js', 'MongoDB', 'Python', 'Isolation Forest'],
@@ -60,7 +70,7 @@ export const projects = [
     categories: ['Cybersecurity','AI/ML'],
   },
     {
-    id: 7,
+    id: 8,
     title: 'Hand Raise Detector',
     description: 'A basic application that accepts an uploaded image, detects multiple people, classifies each person as having their hand raised or not raised, and shows the counts and percentages of people who have raised their hands and those who have not.',
     tech: ['JavaScript', 'HTML', 'CSS', 'MediaPipe'],
@@ -70,7 +80,7 @@ export const projects = [
     categories: ['Computer Vision','AI/ML'],
   },
   {
-    id: 8,
+    id: 9,
     title: 'FoodPrep',
     description: 'FoodPrep is a full-stack food ordering app with a responsive frontend built using HTML, CSS, and JavaScript (Vite). The backend uses Node.js with Express and MongoDB for data storage, supporting JWT-based user authentication, a shopping cart, and Stripe-based payments.',
     tech: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js', 'React'],
@@ -80,7 +90,7 @@ export const projects = [
     categories: 'Full Stack',
   },
   {
-    id: 9,
+    id: 10,
     title: 'Task Manager Application',
     description: 'A Task Manager application that allows users to create an account and securely log in to manage their tasks. Users can add, view, and access details of their tasks, as well as mark them as completed or delete them when no longer needed. Each user can access only their own tasks, ensuring privacy and proper task management.',
     tech: ['PostgreSQL', 'FastAPI', 'Docker', 'SQLAlchemy', 'JWT','Python', 'HTML', 'CSS', 'JavaScript'],
