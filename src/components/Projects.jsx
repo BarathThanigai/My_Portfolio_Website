@@ -10,7 +10,7 @@ const fadeUp = {
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.08, ease: 'easeOut' } }),
 };
 
-const FILTERS = ['All', 'Data Science','AI/ML','Cybersecurity', 'Full Stack', 'DevOps','Computer Vision'];
+const FILTERS = ['All','Software Engineering', 'Data Science','AI/ML','Cybersecurity', 'Full Stack', 'DevOps','Computer Vision'];
 
 function ProjectCard({ project, dark, index }) {
   return (

@@ -1,13 +1,13 @@
 export const projects = [
   {
     id: 1,
-    title: 'Concurrent Web Crawler',
-    description: 'WebScope is a full-stack website intelligence platform that concurrently crawls websites, analyzes SEO and performance metrics, detects broken links, and generates actionable website audit reports through an interactive dashboard.',
-    tech: ['Python', 'Pydantic', 'Pillow', 'OpenAI API', 'Ollama', 'Qwen2.5VL', 'Hugging Face', 'SmolVLM', 'PyTorch', 'Pandas', 'NumPy'],
+    title: 'WebScope – Website Intelligence & Audit Platform',
+    description: 'WebScope is a full-stack Website Intelligence & Audit Platform built with asynchronous concurrent BFS web crawling, robots.txt compliance, sitemap discovery, SEO and performance analysis, link issue detection, interactive site graph visualization, website health scoring, and exportable audit reports through a modern responsive dashboard.',
+    tech: ['React', 'FastAPI', 'Python', 'asyncio', 'aiohttp', 'BeautifulSoup', 'SQLite', 'React Flow', 'Docker', 'GitHub Actions','Node.js'],
     github: 'https://github.com/BarathThanigai/Concurrent_Web_Crawler',
     live: null,
     featured: true,
-    categories: 'AI/ML',
+    categories: ['Full Stack','Software Engineering','DevOps'],
   },
   {
     id: 2,
@@ -17,10 +17,10 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Hybrid_Multimodal_Insurance_Claim_Verification_System',
     live: null,
     featured: true,
-    categories: 'AI/ML',
+    categories: ['AI/ML','Computer Vision'],
   },
   {
-    id: 2,
+    id: 3,
     title: 'GitHub Developer Portfolio Analytics System',
     description: 'This project develops a GitHub Portfolio Analytics System that structures developer data using a normalized MySQL database. A full-stack app provides analytics, CRUD operations, and an AI-based interface for natural language queries, enabling intuitive data retrieval. The system combines backend data management with a user-friendly frontend and AI integration for enhanced developer insights.',
     tech: ['HTML', 'CSS', 'JavaScript', 'React', 'MySQL', 'Node.js', 'Express.js', 'Ollama', 'Mistral'],
@@ -37,7 +37,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Business-Intelligence-Power-BI-Analytics-Dashboard-Suite',
     live: null,
     featured: true,
-    categories: ['Data Science','AI/ML'],
+    categories: ['Data Science'],
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const projects = [
   {
     id: 6,
     title: 'Transport Ticket Demand Prediction',
-    description: 'A data science regression project to forecast Mobiticket seat demand per ride using route, date, and time. Includes data cleaning, EDA, feature engineering, and modeling (Linear, RF, XGBoost and many more) to predict ticket sales.',
+    description: 'Developed an end-to-end machine learning regression pipeline to forecast transport ticket demand using route, date, and time features. Performed data cleaning, exploratory data analysis, feature engineering, and compared multiple models including Linear Regression, Random Forest, XGBoost, and other regression algorithms to optimize prediction accuracy.',
     tech: ['Python', 'Pandas', 'Scikit-learn', 'XGBoost', 'LightGBM', 'CatBoost','Matplotlib', 'Seaborn'],
     github: 'https://github.com/BarathThanigai/Transport-Demand-Prediction',
     live: null,
@@ -67,7 +67,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Inside-Threat-Alert-System',
     live: null,
     featured: true,
-    categories: ['Cybersecurity','AI/ML'],
+    categories: ['Cybersecurity','AI/ML','Full Stack'],
   },
     {
     id: 8,
@@ -87,7 +87,7 @@ export const projects = [
     github: 'https://github.com/BarathThanigai/Foodprep-Frontend',
     live: 'https://vite-foodprep-user.onrender.com/',
     featured: true,
-    categories: 'Full Stack',
+    categories: ['Full Stack'],
   },
   {
     id: 10,
