@@ -55,7 +55,32 @@ export default function Contact() {
                 <p className={`text-sm ${dark ? 'text-gray-400' : 'text-gray-500'}`}>I'll reply to your inbox soon.</p>
               </div>
             ) : (
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="space-y-4">
+              <form
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+
+                      try {
+                        const response = await fetch("http://127.0.0.1:8000/contact", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          body: JSON.stringify(form),
+                        });
+
+                        if (!response.ok) {
+                          throw new Error("Failed to send message");
+                        }
+
+                        setSent(true);
+                        setForm({ name: "", email: "", message: "" });
+                      } catch (error) {
+                        console.error(error);
+                        alert("Message failed to send. Please try again.");
+                      }
+                    }}
+                    className="space-y-4"
+                  >
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className={`block text-xs font-medium mb-1.5 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>Name</label>
@@ -79,7 +104,9 @@ export default function Contact() {
 
           <motion.div variants={fadeUp} custom={4} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-3">
             {socials.map(({ icon: Icon, label, value, href }) => (
-              <a key={label} href={href} className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group ${dark ? 'bg-[#111118] border-[#1E1E2A] hover:border-indigo-900/50' : 'bg-gray-50 border-[#E2E4EB] hover:border-indigo-200 hover:bg-white'}`}>
+              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} 
+                  className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group ${dark ? 'bg-[#111118] border-[#1E1E2A] hover:border-indigo-900/50' : 'bg-gray-50 border-[#E2E4EB] hover:border-indigo-200 hover:bg-white'}`}>
                 <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${dark ? 'bg-indigo-900/25' : 'bg-indigo-50'}`}>
                   <Icon size={16} className={dark ? 'text-indigo-400' : 'text-indigo-600'} />
                 </div>
