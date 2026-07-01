@@ -69,18 +69,8 @@ export const projects = [
     featured: true,
     categories: ['Cybersecurity','AI/ML','Full Stack'],
   },
-    {
-    id: 8,
-    title: 'Hand Raise Detector',
-    description: 'A basic application that accepts an uploaded image, detects multiple people, classifies each person as having their hand raised or not raised, and shows the counts and percentages of people who have raised their hands and those who have not.',
-    tech: ['JavaScript', 'HTML', 'CSS', 'MediaPipe'],
-    github: 'https://github.com/BarathThanigai/Hand-Raise-Detector',
-    live: 'https://hand-raise-detector.onrender.com/',
-    featured: true,
-    categories: ['Computer Vision','AI/ML'],
-  },
   {
-    id: 9,
+    id: 8,
     title: 'FoodPrep',
     description: 'FoodPrep is a full-stack food ordering app with a responsive frontend built using HTML, CSS, and JavaScript (Vite). The backend uses Node.js with Express and MongoDB for data storage, supporting JWT-based user authentication, a shopping cart, and Stripe-based payments.',
     tech: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js', 'Express.js', 'React'],
@@ -90,7 +80,7 @@ export const projects = [
     categories: ['Full Stack'],
   },
   {
-    id: 10,
+    id: 9,
     title: 'Task Manager Application',
     description: 'A Task Manager application that allows users to create an account and securely log in to manage their tasks. Users can add, view, and access details of their tasks, as well as mark them as completed or delete them when no longer needed. Each user can access only their own tasks, ensuring privacy and proper task management.',
     tech: ['PostgreSQL', 'FastAPI', 'Docker', 'SQLAlchemy', 'JWT','Python', 'HTML', 'CSS', 'JavaScript'],
