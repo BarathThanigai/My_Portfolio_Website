@@ -133,7 +133,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.65 }} className="flex flex-wrap items-center gap-8 mt-16 pt-8 border-t border-dashed border-current/10">
-            {[['15+', 'Projects Built'], ['300+', 'GitHub Contributions'], ['20+', 'Technologies Explored'], ['13', 'HackerRank Skill Verification Certificates']].map(([num, label]) => (
+            {[['15+', 'Projects Built'], ['320+', 'GitHub Contributions'], ['20+', 'Technologies Explored'], ['13', 'HackerRank Skill Verification Certificates']].map(([num, label]) => (
               <div key={label}>
                 <div className={`text-2xl font-bold mono ${dark ? 'text-white' : 'text-gray-900'}`}>{num}</div>
                 <div className={`text-xs mt-0.5 ${dark ? 'text-gray-500' : 'text-gray-400'}`}>{label}</div>

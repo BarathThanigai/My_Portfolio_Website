@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import { HiCode, HiDatabase, HiCloud, HiLightningBolt } from 'react-icons/hi';
+import { HiCode, HiChip, HiShieldCheck, HiChartBar } from 'react-icons/hi';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -8,10 +8,26 @@ const fadeUp = {
 };
 
 const highlights = [
-  { icon: HiCode, label: 'Frontend', desc: 'React, TypeScript, Next.js' },
-  { icon: HiDatabase, label: 'Backend', desc: 'Go, Node.js, PostgreSQL' },
-  { icon: HiCloud, label: 'Cloud', desc: 'AWS, GCP, Kubernetes' },
-  { icon: HiLightningBolt, label: 'Performance', desc: 'Systems optimization' },
+  {
+    icon: HiCode,
+    label: 'Software Engineering',
+    desc: 'Building scalable, reliable, and maintainable software.'
+  },
+  {
+    icon: HiChip,
+    label: 'Artificial Intelligence',
+    desc: 'Exploring machine learning and intelligent systems.'
+  },
+  {
+    icon: HiShieldCheck,
+    label: 'Cybersecurity',
+    desc: 'Developing secure applications and threat detection solutions.'
+  },
+  {
+    icon: HiChartBar,
+    label: 'Data Science',
+    desc: 'Transforming data into actionable insights.'
+  },
 ];
 
 export default function About() {
@@ -33,8 +49,8 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-5">
             {[
-              "I'm a Computer Science student at VIT Chennai with a strong interest in software development, artificial intelligence, and data science. I enjoy building end-to-end applications that combine intuitive user interfaces with scalable backend systems and intelligent, data-driven solutions.",
-              "My experience spans full-stack development, machine learning, and data analytics, with projects involving React, FastAPI, Node.js, Express.js, PostgreSQL, MongoDB, and modern AI frameworks. I've developed applications ranging from AI-powered claim verification systems and anomaly detection dashboards to predictive analytics models and business intelligence solutions.",
+              "I'm a Computer Science student at VIT Chennai with a passion for software engineering, artificial intelligence, and data science. I enjoy designing and building applications that combine intuitive user experiences with scalable backend systems and intelligent, data-driven solutions.",
+              "My experience spans full-stack development, machine learning, data analytics, and cybersecurity, with hands-on projects built using technologies such as React, FastAPI, Node.js, Express.js, PostgreSQL, MongoDB, and modern AI frameworks. From AI-powered claim verification systems and cybersecurity digital twins to predictive analytics platforms, business intelligence dashboards, and large-scale web crawling systems, I enjoy tackling diverse technical challenges that have real-world impact.",
               "I'm passionate about solving real-world problems through technology and continuously expanding my knowledge by exploring emerging tools, frameworks, and software engineering practices. I enjoy turning ideas into practical, impactful applications while focusing on clean design, maintainable code, and user-centric experiences.",
             ].map((para, i) => (
               <motion.p key={i} variants={fadeUp} custom={i + 2} initial="hidden" whileInView="visible" viewport={{ once: true }}
