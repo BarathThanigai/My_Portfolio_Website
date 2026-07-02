@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className={`py-8 border-t ${dark ? 'border-[#1E1E2A] bg-[#09090F]' : 'border-[#E2E4EB] bg-[#F8F8FC]'}`}>
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className={`text-xs mono ${dark ? 'text-gray-600' : 'text-gray-400'}`}>
-          © 2026 Barath T · Built with React & Tailwind CSS
+          © 2026 Barath T. Designed and developed by Barath T.
         </div>
         <div className="flex items-center gap-3">
           {[

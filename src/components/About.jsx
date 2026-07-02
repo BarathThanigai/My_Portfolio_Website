@@ -15,8 +15,8 @@ const highlights = [
   },
   {
     icon: HiChip,
-    label: 'Artificial Intelligence',
-    desc: 'Exploring machine learning and intelligent systems.'
+    label: 'Artificial Intelligence & Machine Learning',
+    desc: 'Exploring AI, machine learning and intelligent systems.'
   },
   {
     icon: HiShieldCheck,
