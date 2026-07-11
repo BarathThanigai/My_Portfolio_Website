@@ -25,7 +25,7 @@ A modern, responsive developer portfolio built to showcase my projects, technica
 
 ## Live Demo
 
-Visit the live portfolio: **(https://barath-portfolio-psi.vercel.app/)**
+Visit the live portfolio: **https://barath-portfolio-psi.vercel.app/**
 
 ## Contact
 
