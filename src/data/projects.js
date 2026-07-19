@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: 'WebScope – Website Intelligence & Audit Platform',
     description: 'WebScope is a Website Intelligence & Audit Platform that enables authenticated users to perform high-performance asynchronous website audits with real-time monitoring, AI-powered insights, SEO and performance analysis, robots.txt compliance, sitemap discovery, interactive site graph visualization, and exportable audit reports.',
-    tech: ['React', 'FastAPI', 'Python', 'asyncio', 'aiohttp', 'BeautifulSoup', 'SQLite', 'React Flow', 'Docker', 'GitHub Actions','Node.js'],
+    tech: ['React','FastAPI','Python','PostgreSQL','Redis','RQ','asyncio','aiohttp','BeautifulSoup','React Flow','Docker','GitHub Actions'],
     github: 'https://github.com/BarathThanigai/Concurrent_Web_Crawler',
     live: 'https://concurrent-web-crawler.vercel.app/',
     featured: true,
