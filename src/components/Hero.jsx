@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { HiDownload, HiArrowRight } from 'react-icons/hi';
+import profile from "../assets/photo.jpeg";
 
 const TITLES = ['CSE student at VIT - Chennai', 'Exploring AI & Machine Learning', 'Creating Data-Driven Solutions', 'Building Scalable Software'];
 
@@ -95,8 +96,9 @@ export default function Hero() {
       <div className={`absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-3xl pointer-events-none ${dark ? 'bg-indigo-900/20' : 'bg-indigo-100/60'}`} />
       <div className={`absolute bottom-1/4 -right-32 w-80 h-80 rounded-full blur-3xl pointer-events-none ${dark ? 'bg-violet-900/15' : 'bg-violet-100/40'}`} />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16 w-full">
-        <div className="max-w-3xl">
+      <div className="relative max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
+        <div className="flex items-center justify-between gap-12">
+          <div className="max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="inline-flex items-center gap-2 mb-8">
             <span className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mono border ${dark ? 'bg-emerald-900/20 border-emerald-800/40 text-emerald-400' : 'bg-emerald-50 border-emerald-200 text-emerald-700'}`}>
               <span className="relative flex h-2 w-2">
@@ -140,8 +142,82 @@ export default function Hero() {
               </div>
             ))}
           </motion.div>
-        </div>
+                </div>
+
+        {/* Right Side Image */}
+        <motion.div
+  initial={{ opacity: 0, x: 40 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="hidden lg:flex flex-1 justify-end -translate-x-15"
+>
+  <div className="relative">
+
+    {/* Large Background Glow */}
+    <div
+      className={`absolute 
+    top-1/2 
+    left-1/2 
+    -translate-x-1/2 
+    -translate-y-1/2
+    w-[500px]
+    h-[500px]
+    rounded-full
+    blur-[120px] ${
+        dark
+          ? "bg-indigo-500/35"
+          : "bg-indigo-300/50"
+      }`}
+    />
+
+    {/* Top Right Glow */}
+    <div
+      className={`absolute -top-6 -right-6 w-24 h-24 rounded-full blur-2xl ${
+        dark ? "bg-indigo-400/20" : "bg-indigo-200/30"
+      }`}
+    />
+
+    {/* Bottom Left Glow */}
+    <div
+      className={`absolute -bottom-6 -left-6 w-20 h-20 rounded-full blur-2xl ${
+        dark ? "bg-indigo-400/20" : "bg-indigo-200/30"
+      }`}
+    />
+
+    {/* Floating Photo */}
+    <motion.img
+      src={profile}
+      alt="Barath T"
+      animate={{
+        y: [0, -15, 0],
+      }}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className={`relative
+        w-[320px]
+        h-auto
+        rounded-[32px]
+        object-contain
+        hover:scale-[1.02]
+        transition-all
+        duration-500
+        shadow-[0_25px_80px_rgba(79,70,229,0.35)]
+        border
+        ${
+          dark
+            ? "border-white/10 bg-[#0E1017]"
+            : "border-gray-200 bg-white"
+        }
+      `}
+    />
+
+  </div>
+</motion.div>
       </div>
+    </div>
     </section>
   );
 }
