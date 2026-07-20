@@ -10,4 +10,18 @@ export const experience = [
       'Strengthened my skills in Python, Power BI, data analysis, and data visualization while gaining valuable hands-on experience',
     ],
   },
+  {
+    id: 2,
+    org: 'BlackVolt Technologies Pvt. Ltd.',
+    role: 'Artificial Intelligence and Machine Learning Intern',
+    duration: 'June 2026 - Present',
+    type: 'Internship',
+  },
+  {
+    id: 3,
+    org: 'CodeChef VIT - Chennai Chapter',
+    role: 'Event Management - Member',
+    duration: 'July 2026 - Present',
+    type: 'Club',
+  },
 ];
