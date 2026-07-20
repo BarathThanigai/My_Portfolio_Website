@@ -16,6 +16,10 @@ export const experience = [
     role: 'Artificial Intelligence and Machine Learning Intern',
     duration: 'June 2026 - Present',
     type: 'Internship',
+    achievements: [
+      'Currently working as an AI/ML Intern, gaining industry exposure to Artificial Intelligence and Machine Learning',
+      'Enhancing my technical skills through practical learning, collaboration, and real-world development experience',
+    ],
   },
   {
     id: 3,
@@ -23,5 +27,10 @@ export const experience = [
     role: 'Event Management - Member',
     duration: 'July 2026 - Present',
     type: 'Club',
+    achievements: [
+      'Member of the CodeChef Chapter - VIT Chennai (Event Management), participating in technical and community-driven initiatives',
+      'Engaging in coding activities, collaborative events, and continuous learning to strengthen problem-solving skills',
+    ],
   },
+  
 ];
