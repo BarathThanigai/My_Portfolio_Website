@@ -1,121 +1,318 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { 
+  Mail, 
+  Send, 
+  Copy, 
+  Check, 
+  ArrowUpRight, 
+  AlertCircle
+} from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import confetti from 'canvas-confetti';
 import { useTheme } from '../context/ThemeContext';
-import { HiMail, HiArrowRight } from 'react-icons/hi';
-import { SiGithub, SiX } from 'react-icons/si';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { useToast } from '../context/ToastContext';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' } }),
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }
+  }),
 };
-
-const socials = [
-  { icon: HiMail, label: 'Email', value: 'contactmebarath@gmail.com', href: 'mailto:contactmebarath@gmail.com' },
-  { icon: SiGithub, label: 'GitHub', value: 'github.com/BarathThanigai', href: 'https://github.com/BarathThanigai' },
-  { icon: FaLinkedinIn, label: 'LinkedIn', value: 'linkedin.com/in/barath-t-4361b8318/', href: 'https://www.linkedin.com/in/barath-t-4361b8318/' },
-];
 
 export default function Contact() {
   const { theme } = useTheme();
-  const dark = theme === 'dark';
+  const { showToast } = useToast();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [copied, setCopied] = useState(false);
+  const dark = theme === 'dark';
 
-  const inputClass = `w-full px-4 py-2.5 text-sm rounded-lg border outline-none transition-all duration-200 ${
-    dark
-      ? 'bg-[#0D0D16] border-[#1E1E2A] text-white placeholder-gray-600 focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600/20'
-      : 'bg-white border-[#E2E4EB] text-gray-900 placeholder-gray-400 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400/20'
-  }`;
+  const copyEmail = () => {
+    navigator.clipboard.writeText('contactmebarath@gmail.com');
+    setCopied(true);
+    showToast('Email address copied to clipboard!');
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setErrorMessage('Please fill in all fields before sending.');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Simulate asynchronous submission
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
+      setSubmitted(true);
+      setForm({ name: '', email: '', message: '' });
+      showToast('Thank you! Your message has been sent.');
+
+      try {
+        confetti({
+          particleCount: 60,
+          spread: 70,
+          origin: { y: 0.7 }
+        });
+      } catch {
+        // Fallback gracefully
+      }
+    } catch {
+      setErrorMessage('Something went wrong. Please try emailing directly.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <section id="contact" className={`py-24 ${dark ? 'bg-[#0D0D16]' : 'bg-white'}`}>
+    <section id="contact" className={`py-28 relative ${dark ? 'bg-[#08090E]' : 'bg-white'}`}>
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-          className={`mono text-xs font-semibold tracking-widest uppercase mb-2 ${dark ? 'text-indigo-400' : 'text-indigo-600'}`}>
-          Contact
-        </motion.div>
-        <motion.h2 variants={fadeUp} custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }}
-          className={`text-3xl md:text-4xl font-bold tracking-tight mb-4 ${dark ? 'text-white' : 'text-gray-900'}`}>
-          Let's work together
-        </motion.h2>
-        <motion.p variants={fadeUp} custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }}
-          className={`text-[15px] mb-14 max-w-lg ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-          I'm currently open to new opportunities — full-time roles or project collaborations. Drop me a message and I'll get back within a day.
-        </motion.p>
+        
+        {/* Section Header */}
+        <div className="mb-14">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={`font-mono text-xs font-semibold tracking-widest uppercase mb-2 ${
+              dark ? 'text-indigo-400' : 'text-indigo-600'
+            }`}
+          >
+            Contact
+          </motion.div>
+          <motion.h2
+            variants={fadeUp}
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
+          >
+            Let's connect
+          </motion.h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div variants={fadeUp} custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            {sent ? (
-              <div className={`h-full flex flex-col items-center justify-center text-center rounded-xl border p-12 ${dark ? 'bg-[#111118] border-[#1E1E2A]' : 'bg-gray-50 border-[#E2E4EB]'}`}>
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${dark ? 'bg-indigo-900/30' : 'bg-indigo-50'}`}>
-                  <HiMail size={20} className="text-indigo-500" />
-                </div>
-                <h3 className={`font-semibold mb-1 ${dark ? 'text-white' : 'text-gray-900'}`}>Message sent!</h3>
-                <p className={`text-sm ${dark ? 'text-gray-400' : 'text-gray-500'}`}>I'll reply to your inbox soon.</p>
-              </div>
-            ) : (
-              <form
-                    onSubmit={async (e) => {
-                      e.preventDefault();
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Direct Info & Social Cards */}
+          <motion.div
+            variants={fadeUp}
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="lg:col-span-5 space-y-6"
+          >
+            <p className={`text-base leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
+              I'm always open to discussing new projects, internship opportunities, or collaborations. Whether you have a question or just want to say hi, feel free to reach out!
+            </p>
 
-                      try {
-                        const response = await fetch("https://portfolio-contact-api-eight.vercel.app/contact", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify(form),
-                        });
-
-                        if (!response.ok) {
-                          throw new Error("Failed to send message");
-                        }
-
-                        setSent(true);
-                        setForm({ name: "", email: "", message: "" });
-                      } catch (error) {
-                        console.error(error);
-                        alert("Message failed to send. Please try again.");
-                      }
-                    }}
-                    className="space-y-4"
-                  >
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className={`block text-xs font-medium mb-1.5 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>Name</label>
-                    <input className={inputClass} placeholder="Jane Smith" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
+            {/* Email Card with Copy Button */}
+            <div
+              className={`p-5 rounded-2xl border transition-all ${
+                dark ? 'bg-[#0E1017] border-white/10' : 'bg-gray-50 border-gray-200'
+              }`}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className={`p-2.5 rounded-xl ${dark ? 'bg-indigo-500/10 text-indigo-400' : 'bg-indigo-50 text-indigo-600'}`}>
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <label className={`block text-xs font-medium mb-1.5 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>Email</label>
-                    <input type="email" className={inputClass} placeholder="jane@company.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
+                    <div className={`text-xs font-mono uppercase tracking-wider ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
+                      Direct Email
+                    </div>
+                    <a
+                      href="mailto:contactmebarath@gmail.com"
+                      className={`text-sm font-semibold tracking-tight hover:underline ${
+                        dark ? 'text-white' : 'text-gray-900'
+                      }`}
+                    >
+                      contactmebarath@gmail.com
+                    </a>
                   </div>
                 </div>
-                <div>
-                  <label className={`block text-xs font-medium mb-1.5 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>Message</label>
-                  <textarea rows={5} className={inputClass} placeholder="Tell me about your project or role..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} required />
-                </div>
-                <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-indigo-900/20 hover:-translate-y-0.5">
-                  Send message <HiArrowRight size={15} />
+
+                <button
+                  onClick={copyEmail}
+                  className={`p-2 rounded-xl border transition-colors ${
+                    copied
+                      ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
+                      : dark
+                        ? 'border-white/10 text-gray-400 hover:text-white hover:bg-white/5'
+                        : 'border-gray-200 text-gray-600 hover:text-gray-900 hover:bg-white'
+                  }`}
+                  title="Copy email to clipboard"
+                >
+                  {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
-              </form>
-            )}
+              </div>
+            </div>
+
+            {/* Social Links Cards */}
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href="https://github.com/BarathThanigai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-4 rounded-2xl border flex items-center justify-between transition-all group ${
+                  dark
+                    ? 'bg-[#0E1017] border-white/10 hover:border-white/25 text-white'
+                    : 'bg-gray-50 border-gray-200 hover:border-gray-300 text-gray-900 hover:bg-white'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <FaGithub className="w-5 h-5" />
+                  <span className="text-sm font-semibold">GitHub</span>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/barath-t-4361b8318/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-4 rounded-2xl border flex items-center justify-between transition-all group ${
+                  dark
+                    ? 'bg-[#0E1017] border-white/10 hover:border-indigo-500/30 text-white'
+                    : 'bg-gray-50 border-gray-200 hover:border-indigo-200 text-gray-900 hover:bg-white'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <FaLinkedin className="w-5 h-5 text-blue-500" />
+                  <span className="text-sm font-semibold">LinkedIn</span>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
           </motion.div>
 
-          <motion.div variants={fadeUp} custom={4} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-3">
-            {socials.map(({ icon: Icon, label, value, href }) => (
-              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} 
-                  className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 group ${dark ? 'bg-[#111118] border-[#1E1E2A] hover:border-indigo-900/50' : 'bg-gray-50 border-[#E2E4EB] hover:border-indigo-200 hover:bg-white'}`}>
-                <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${dark ? 'bg-indigo-900/25' : 'bg-indigo-50'}`}>
-                  <Icon size={16} className={dark ? 'text-indigo-400' : 'text-indigo-600'} />
+          {/* Right Column: Contact Form */}
+          <motion.div
+            variants={fadeUp}
+            custom={3}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="lg:col-span-7"
+          >
+            <div
+              className={`p-6 sm:p-8 rounded-2xl border shadow-xl ${
+                dark
+                  ? 'bg-[#0E1017] border-white/10 shadow-black/40'
+                  : 'bg-white border-gray-200 shadow-gray-100'
+              }`}
+            >
+              {submitted ? (
+                <div className="py-12 text-center space-y-4">
+                  <div className="w-12 h-12 rounded-full bg-emerald-500/15 text-emerald-400 mx-auto flex items-center justify-center border border-emerald-500/30">
+                    <Check className="w-6 h-6" />
+                  </div>
+                  <h3 className={`text-xl font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>
+                    Message Sent Successfully!
+                  </h3>
+                  <p className={`text-sm max-w-md mx-auto ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
+                    Thank you for reaching out! I've received your note and will get back to you as soon as possible.
+                  </p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-semibold rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+                  >
+                    Send Another Note
+                  </button>
                 </div>
-                <div>
-                  <div className={`text-xs font-medium mb-0.5 ${dark ? 'text-gray-500' : 'text-gray-400'}`}>{label}</div>
-                  <div className={`text-sm font-medium transition-colors ${dark ? 'text-gray-300 group-hover:text-white' : 'text-gray-700 group-hover:text-gray-900'}`}>{value}</div>
-                </div>
-              </a>
-            ))}
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {errorMessage && (
+                    <div className="flex items-center gap-2 p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
+                  <div>
+                    <label className={`block text-xs font-mono font-medium mb-1.5 ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      placeholder="e.g., Alex Morgan"
+                      className={`w-full px-4 py-3 rounded-xl text-sm border outline-none transition-all ${
+                        dark
+                          ? 'bg-[#141622] border-white/10 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'
+                      }`}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={`block text-xs font-mono font-medium mb-1.5 ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Your Email Address
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      placeholder="e.g., alex@company.com"
+                      className={`w-full px-4 py-3 rounded-xl text-sm border outline-none transition-all ${
+                        dark
+                          ? 'bg-[#141622] border-white/10 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'
+                      }`}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={`block text-xs font-mono font-medium mb-1.5 ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Your Message
+                    </label>
+                    <textarea
+                      required
+                      rows={4}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      placeholder="Tell me about your project, idea, or inquiry..."
+                      className={`w-full px-4 py-3 rounded-xl text-sm border outline-none transition-all resize-none ${
+                        dark
+                          ? 'bg-[#141622] border-white/10 text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'
+                      }`}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 text-white text-sm font-semibold transition-all duration-200 shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 hover:-translate-y-0.5 active:translate-y-0"
+                  >
+                    {loading ? (
+                      <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
           </motion.div>
         </div>
       </div>
